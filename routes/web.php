@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/tesAplikasi', function () {
     return view('tes');
 });
+
+Route::get('/user/{name}', function (string $name) {
+    return view('user');
+});
