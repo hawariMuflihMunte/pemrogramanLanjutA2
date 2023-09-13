@@ -22,7 +22,7 @@ Route::get('/tesAplikasi', function () {
 });
 
 Route::get('/user/{name}', function (string $name) {
-    return view('user');
+    return view('user', ['name' => $name]);
 });
 
 Route::get('/r', function () {

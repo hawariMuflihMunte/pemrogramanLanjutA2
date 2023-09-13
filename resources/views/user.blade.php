@@ -17,6 +17,6 @@
   </head>
   <body class="antialiased">
     <h1 class="text-gray-900 text-xl">This is test page</h1>
-    <h2>{{ URL::current() }}</h2>
+    <h2>{{ $name }}</h2>
   </body>
 </html>
