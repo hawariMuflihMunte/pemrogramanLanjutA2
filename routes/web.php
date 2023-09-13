@@ -24,3 +24,9 @@ Route::get('/tesAplikasi', function () {
 Route::get('/user/{name}', function (string $name) {
     return view('user');
 });
+
+Route::get('/r', function () {
+    return view('r');
+});
+
+Route::redirect('/redirect', '/r');
