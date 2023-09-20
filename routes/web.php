@@ -30,3 +30,7 @@ Route::get('/r', function () {
 });
 
 Route::redirect('/redirect', '/r');
+
+Route::get('/cekphp', function () {
+    echo phpinfo();
+});
