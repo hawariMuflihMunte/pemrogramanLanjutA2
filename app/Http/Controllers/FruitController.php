@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class FruitController extends Controller
 {
-    public function index()
+    public function __invoke()
     {
         $fruits = [
             'Pineapple',

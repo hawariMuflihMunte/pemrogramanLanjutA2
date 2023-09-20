@@ -29,4 +29,4 @@ Route::get('/cekphp', function () {
 
 Route::get('/latihan', [LatihanController::class, 'index']);
 
-Route::get('/fruits', [FruitController::class, 'index']);
+Route::get('/fruits', FruitController::class);
