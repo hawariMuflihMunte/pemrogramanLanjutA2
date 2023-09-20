@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FruitController;
 use App\Http\Controllers\LatihanController;
+use App\Http\Controllers\StudentData;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,12 @@ Route::get('/cekphp', function () {
     echo phpinfo();
 });
 
-Route::get('/latihan', [LatihanController::class, 'index']);
+Route::get('/latihan', [
+    LatihanController::class, 'index'
+]);
 
 Route::get('/fruits', FruitController::class);
+
+Route::get('/student-data', [
+    StudentData::class, 'index'
+]);
