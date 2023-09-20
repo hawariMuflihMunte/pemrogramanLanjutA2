@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LatihanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +35,6 @@ Route::redirect('/redirect', '/r');
 Route::get('/cekphp', function () {
     echo phpinfo();
 });
+
+// Route to Controller
+Route::get('/latihan', [LatihanController::class, 'index']);
