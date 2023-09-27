@@ -26,6 +26,19 @@ class FruitController extends Controller
 
     public function save(Request $request)
     {
+        $validationMessage = [
+            'name.unique' => 'Duplicate'
+        ];
+
+        $validationRules = [ 'name' => 'unique:fruit' ];
+        $request->validate($validationRules, $validationMessage);
+
+        $existing_fruit = Fruit::where('name', $request->fruit);
+
+        if (isset($existing_fruit)) {
+            return view('duplicate');
+        }
+
         $fruit = $request->fruit;
         Fruit::create(['name' => $fruit]);
 
