@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Student Data</title>
+  <title>Datadiri</title>
 </head>
 <body>
   <fieldset style="max-width: 80%; margin: 0 auto;">
-    <h1>Student Data</h1>
+    <h1>Datadiri</h1>
     <hr>
     <section>
       <p>
