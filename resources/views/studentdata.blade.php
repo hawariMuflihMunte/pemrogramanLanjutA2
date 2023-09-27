@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Datadiri</title>
 
+  <link rel="stylesheet" href="https://cdn.korzh.com/metroui/v4.5.1/css/metro-all.min.css">
+
   <link rel="stylesheet" href="{{ asset('assets/css/normalize.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/skeleton.css') }}">
 
@@ -13,7 +15,7 @@
 <body>
   <main style="max-width: 80%; margin: 0 auto;">
     <h1>Datadiri</h1>
-    <fieldset>
+    <fieldset class="border-solid border-size-2 border-radius p-10">
       <section>
         <table>
           <thead>
