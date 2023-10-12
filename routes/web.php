@@ -1,10 +1,5 @@
 <?php
 
-use App\Http\Controllers\FruitController;
-use App\Http\Controllers\LatihanController;
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\StudentData;
-use App\Http\Controllers\StudentDataController;
 use Illuminate\Support\Facades\Route;
 
 /*
