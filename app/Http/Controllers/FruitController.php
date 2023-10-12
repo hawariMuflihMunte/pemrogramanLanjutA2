@@ -26,7 +26,7 @@ class FruitController extends Controller
 
     public function save(Request $request)
     {
-        $validationMessage = [
+        /*$validationMessage = [
             'name.unique' => 'Duplicate'
         ];
 
@@ -42,6 +42,28 @@ class FruitController extends Controller
         $fruit = $request->fruit;
         Fruit::create(['name' => $fruit]);
 
-        return redirect()->action(FruitController::class);
+        return redirect()->action(FruitController::class); */
+
+        $f = $request->fruit;
+        Fruit::create([
+            'name' => $f
+        ]);
+
+        return redirect()->route('fruits');
+    }
+
+    public function delete(Request $request)
+    {
+        $id = $request->id;
+        Fruit::destroy($id);
+
+        return redirect('/fruits');
+    }
+
+    public function edit(Request $request)
+    {
+        $id = $request->id;
+        //Fruit::where($id)
+        return view('fruits.edit');
     }
 }
