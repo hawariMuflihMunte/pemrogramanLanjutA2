@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FruitController;
 use App\Http\Controllers\LatihanController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudentData;
 use App\Http\Controllers\StudentDataController;
 use Illuminate\Support\Facades\Route;
@@ -33,8 +34,12 @@ Route::get('/latihan', [
     LatihanController::class, 'index'
 ]);
 
-Route::get('/fruits', FruitController::class);
+Route::get('/fruits', FruitController::class)->name('fruits');
 Route::get('/fruits/add', [FruitController::class, 'add'])->name('add');
 Route::post('/fruit/save', [FruitController::class, 'save'])->name('save');
+Route::put('/fruits/edit', [FruitController::class, 'edit'])->name('edit');
+Route::delete('/fruits/delete', [FruitController::class, 'delete'])->name('delete');
 
 Route::get('/studentdata', StudentDataController::class);
+
+Route::resource('/students', StudentController::class);
