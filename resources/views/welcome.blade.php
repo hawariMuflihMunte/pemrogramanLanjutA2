@@ -14,6 +14,9 @@
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.1/dist/js/uikit-icons.min.js"></script>
     </head>
     <body class="antialiased">
-        <h1>"Tugas 2" Repository</h1>
+        <main class="uk-container">
+            <h1>"Tugas 2" Repository</h1>
+            <a href="/data-mahasiswa" class="uk-button uk-button-large uk-button-default">LINK</a>
+        </main>
     </body>
 </html>
