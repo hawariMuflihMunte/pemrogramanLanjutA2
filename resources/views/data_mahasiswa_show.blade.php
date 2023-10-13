@@ -59,16 +59,16 @@
                 <tbody>
                     <tr>
                       <td>
-                        <input type="text" name="kode" id="kode" class="uk-input" value="{{ $matakuliah['kode'] }}" readonly>
+                        {{ $matakuliah['kode'] }}
                       </td>
                       <td>
-                        <input type="text" name="nama" id="nama" class="uk-input" value="{{ $matakuliah['nama'] }}" readonly>
+                        {{ $matakuliah['nama'] }}
                       </td>
                       <td>
-                        <input type="number" name="sks" id="sks" class="uk-input" value="{{ $matakuliah['sks'] }}" min="1" max="6" readonly>
+                        {{ $matakuliah['sks'] }}
                       </td>
                       <td>
-                        <textarea type="text" name="dosen" id="dosen" class="uk-textarea" value="{{ $matakuliah['dosen'] }}" style="resize: vertical" readonly>{{ $matakuliah['dosen'] }}</textarea>
+                        {{ $matakuliah['dosen'] }}
                       </td>
                     </tr>
                 </tbody>
