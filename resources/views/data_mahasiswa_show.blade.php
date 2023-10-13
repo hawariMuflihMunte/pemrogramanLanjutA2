@@ -14,9 +14,27 @@
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.1/dist/js/uikit-icons.min.js"></script>
     </head>
     <body class="antialiased">
+      @if(session()->has('message_show_success'))
+        <div class="uk-alert-success" uk-alert="duration: 1000" id="notif">
+            <a href class="uk-alert-close" uk-close></a>
+            <p>{{ session()->get('message_show_success') }}</p>
+        </div>
+      @elseif (session()->has('message_show_failed'))
+        <div class="uk-alert-danger" uk-alert="duration: 1000" id="notif">
+            <a href class="uk-alert-close" uk-close></a>
+            <p>{{ session()->get('message_show_failed') }}</p>
+        </div>
+      @endif
+      <script>
+        const notif = document.getElementById('notif') || null;
+
+        setTimeout(() => {
+          notif.style.display = 'none';
+        }, 5000);
+      </script>
         <main class="uk-container">
           <section class="uk-padding-large">
-            <h1>Data Mahasiswa | Lihat Data</h1>
+            <h1>Data Mahasiswa | Rincian Data</h1>
             <hr>
             <section class="uk-overflow-auto">
               <section class="uk-flex uk-flex-middle">

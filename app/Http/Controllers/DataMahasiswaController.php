@@ -29,14 +29,19 @@ class DataMahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        Matakuliah::create([
+        $matakuliah = Matakuliah::create([
             'kode' => $request->kode,
             'nama' => $request->nama,
             'sks' => (int)$request->sks,
             'dosen' => $request->dosen
         ]);
 
-        session()->flash('message_create', 'Data berhasil ditambah');
+        if ($matakuliah->exists()) {
+            session()->flash('message_create_success', 'Data berhasil ditambah');
+        } else {
+            session()->flash('message_create_failed', 'Data gagal ditambah. Terjadi kesalahan!');
+        }
+
         return redirect()->route('data-mahasiswa.index');
     }
 
@@ -46,6 +51,13 @@ class DataMahasiswaController extends Controller
     public function show(string $id)
     {
         $matakuliah = Matakuliah::find((int)$id);
+
+        if ($matakuliah->exists()) {
+            session()->flash('message_show_success', 'Data berhasil ditemukan');
+        } else {
+            session()->flash('message_show_failed', 'Data gagal ditemukan. Terjadi kesalahan!');
+        }
+
         return view('data_mahasiswa_show', ['matakuliah' => $matakuliah]);
     }
 
@@ -55,6 +67,13 @@ class DataMahasiswaController extends Controller
     public function edit(string $id)
     {
         $matakuliah = Matakuliah::find((int)$id);
+
+        if ($matakuliah->exists()) {
+            session()->flash('message_edit_success', 'Data berhasil ditemukan');
+        } else {
+            session()->flash('message_edit_failed', 'Data gagal ditemukan. Terjadi kesalahan!');
+        }
+
         return view('data_mahasiswa_edit', ['matakuliah' => $matakuliah]);
     }
 
@@ -63,12 +82,20 @@ class DataMahasiswaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        Matakuliah::where('id', (int)$id)->update([
+        $matakuliah = Matakuliah::find((int)$id);
+
+        $matakuliah->update([
             'kode' => $request->kode,
             'nama' => $request->nama,
             'sks' => (int)$request->sks,
             'dosen' => $request->dosen
         ]);
+
+        if ($matakuliah->exists()) {
+            session()->flash('message_update_success', 'Data berhasil diubah');
+        } else {
+            session()->flash('message_update_failed', 'Data gagal diubah');
+        }
 
         return redirect()->route('data-mahasiswa.index');
     }
@@ -78,9 +105,14 @@ class DataMahasiswaController extends Controller
      */
     public function destroy(string $id)
     {
-        Matakuliah::destroy((int)$id);
+        $rowsAffected = Matakuliah::destroy((int)$id);
 
-        session()->flash('message_delete', 'Data berhasil dihapus');
+        if ($rowsAffected > 0) {
+            session()->flash('message_delete_success', 'Data berhasil dihapus');
+        } else {
+            session()->flash('message_delete_failed', 'Data gagal dihapus');
+        }
+
         return redirect()->route('data-mahasiswa.index');
     }
 }
