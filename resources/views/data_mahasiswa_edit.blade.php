@@ -53,7 +53,7 @@
                         <textarea type="text" name="dosen" id="dosen" class="uk-textarea" value="{{ $matakuliah['dosen'] }}" style="resize: vertical">{{ $matakuliah['dosen'] }}</textarea>
                       </td>
                       <td>
-                        <button type="submit" class="uk-icon-button uk-button-primary" uk-icon="check"></button>
+                        <button type="submit" class="uk-icon-button uk-button-primary" uk-icon="check" onclick="return confirm('{{ "Ubah data ".$matakuliah['nama']."?" }}')" title="{{ "Ubah data ".$matakuliah['nama']."?" }}"></button>
                       </td>
                     </tr>
                 </tbody>
