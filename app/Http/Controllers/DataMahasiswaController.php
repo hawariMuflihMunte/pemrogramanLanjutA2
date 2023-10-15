@@ -12,8 +12,17 @@ class DataMahasiswaController extends Controller
      */
     public function index()
     {
-        $data = Matakuliah::all();
-        return view('data_mahasiswa', ['matakuliah' => $data]);
+        $data = [
+            'nim' => '200170120',
+            'nama' => 'Hawari Muflih Munte',
+            'prodi' => 'Teknik Informatika',
+            'jurusan' => 'Teknik Informatika'
+        ];
+        $db = Matakuliah::all();
+        return view('data_mahasiswa', [
+            'data_mahasiswa' => $data,
+            'matakuliah' => $db
+        ]);
     }
 
     /**

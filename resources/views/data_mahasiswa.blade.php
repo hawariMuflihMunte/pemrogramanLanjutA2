@@ -64,6 +64,31 @@
         <section class="uk-padding-large">
           <h1>Data Mahasiswa</h1>
           <hr>
+          <table>
+            <tbody>
+              <tr>
+                <td>NIM</td>
+                <td>:</td>
+                <td class="uk-padding uk-padding-remove-top uk-padding-remove-right uk-padding-remove-bottom">{{ $data_mahasiswa['nim'] }}</td>
+              </tr>
+              <tr>
+                <td>Nama</td>
+                <td>:</td>
+                <td class="uk-padding uk-padding-remove-top uk-padding-remove-right uk-padding-remove-bottom">{{ $data_mahasiswa['nama'] }}</td>
+              </tr>
+              <tr>
+                <td>Prodi</td>
+                <td>:</td>
+                <td class="uk-padding uk-padding-remove-top uk-padding-remove-right uk-padding-remove-bottom">{{ $data_mahasiswa['prodi'] }}</td>
+              </tr>
+              <tr>
+                <td>Jurusan</td>
+                <td>:</td>
+                <td class="uk-padding uk-padding-remove-top uk-padding-remove-right uk-padding-remove-bottom">{{ $data_mahasiswa['jurusan'] }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr>
           <section class="uk-overflow-auto">
             <section class="uk-flex uk-flex-middle">
               <a href="{{ route('data-mahasiswa.create') }}" class="uk-icon-button uk-button-primary" uk-icon="plus"></a>
