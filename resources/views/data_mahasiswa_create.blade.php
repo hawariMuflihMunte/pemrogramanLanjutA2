@@ -46,7 +46,7 @@
                         <input type="text" name="nama" id="nama" class="uk-input">
                       </td>
                       <td>
-                        <input type="number" name="sks" id="sks" class="uk-input" min="1" max="6">
+                        <input type="number" name="sks" id="sks" class="uk-input" min="1" max="10">
                       </td>
                       <td>
                         <textarea type="text" name="dosen" id="dosen" class="uk-input" style="resize: vertical"></textarea>
