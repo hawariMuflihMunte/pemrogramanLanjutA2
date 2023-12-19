@@ -37,7 +37,8 @@ Route::get('/latihan', [
 Route::get('/fruits', FruitController::class)->name('fruits');
 Route::get('/fruits/add', [FruitController::class, 'add'])->name('add');
 Route::post('/fruit/save', [FruitController::class, 'save'])->name('save');
-Route::put('/fruits/edit', [FruitController::class, 'edit'])->name('edit');
+Route::get('/fruits/edit/{id}', [FruitController::class, 'edit'])->name('edit');
+Route::put('/fruits/edit/{id}', [FruitController::class, 'update'])->name('edit.fruits');
 Route::delete('/fruits/delete', [FruitController::class, 'delete'])->name('delete');
 
 Route::get('/studentdata', StudentDataController::class);

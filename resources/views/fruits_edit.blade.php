@@ -17,11 +17,12 @@
     <h1>Fruits</h1>
     <fieldset class="border-solid border-size-2 border-radius p-10">
       <form
-        action="{{ route('save') }}"
+        action="{{ route('edit.fruits', ['id' => $fruit['id']]) }}"
         method="POST"
         enctype="multipart/form-data"
       >
         @csrf
+        @method('PUT')
         @if($errors->any())
           <div>
               <ul>
@@ -32,8 +33,15 @@
           </div>
         @endif
         <label for="fruit">Fruit Name:</label>
-        <input type="text" name="fruitName" id="fruitName" placeholder="....">
-        <input type="file" name="fruitImage" id="fruitImage">
+        <input type="text" name="fruitName" id="fruitName" placeholder="...." value="{{ $fruit['fruitName'] }}">
+        <section>
+          <p>Current Image</p>
+          <section>
+            <img src="{{ asset('images/'.$fruit['fruitImage']) }}" alt="{{ $fruit['fruitName'] }}">
+          </section>
+        </section>
+        <label for="fruitImage">New Image</label>
+        <input type="file" name="fruitImage" id="fruitImage" value="{{ $fruit['fruitImage'] }}">
         <button type="submit" class="button-primary">Save</button>
       </form>
     </fieldset>

@@ -10,5 +10,5 @@ class Fruit extends Model
     use HasFactory;
 
     protected $table = 'fruit';
-    protected $fillable = ['name'];
+    protected $fillable = ['fruitName', 'fruitImage'];
 }

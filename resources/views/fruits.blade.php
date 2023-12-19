@@ -20,9 +20,15 @@
     <ul>
       @foreach ($fruits as $fruit)
         <li>
-          {{ $fruit['name'] }} - ({{ date('m/d/Y',  strtotime($fruit['updated_at'])) }})
+          <span>{{ $fruit['fruitName'] }} - ({{ date('m/d/Y',  strtotime($fruit['updated_at'])) }})</span>
+          <img src="{{ asset('images/'.$fruit->fruitImage) }}" alt="{{ $fruit['fruitName'] }}" style="
+            width: 200px;
+            height: auto;
+            display: block;
+            margin-bottom: 12px;
+          ">
           <section style="display: flex; gap: 6px;">
-            <a href="{{ route('edit') }}" class="button">Edit</a>
+            <a href="{{ route('edit', ['id' => $fruit['id']]) }}" class="button">Edit</a>
             <form action="{{ route('delete') }}" method="post">
               @method('delete')
               @csrf
