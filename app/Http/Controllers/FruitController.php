@@ -69,8 +69,9 @@ class FruitController extends Controller
             $imageFile->move(public_path('images'), $imageName);
             $data['fruitImage'] = $imageName;
         } else {
-            // If no new image is provided, keep the existing image in the database
-            unset($data['fruitImage']);
+            $existingFruit = Fruit::find((int)$id);
+
+            $data['fruitImage'] = $existingFruit->fruitImage;
         }
 
         Fruit::where('id', (int)$id)->update($data);
