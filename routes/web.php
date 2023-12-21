@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DataMahasiswaController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,9 @@ Route::get('/', function () {
 });
 
 Route::resource('/data-mahasiswa', DataMahasiswaController::class)->middleware('auth');
+
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('post.login');
-Route::get('/register', [LoginController::class, 'registration'])->name('get.registration');
+
+Route::get('/register', [RegistrationController::class, 'index'])->name('get.registration');
+Route::post('/register', [RegistrationController::class, 'registration'])->name('post.registration');

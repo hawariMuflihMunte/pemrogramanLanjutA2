@@ -19,7 +19,8 @@
         #formContainer > * {
             background-color: #fff;
             padding: 16px;
-            max-width: 320px;
+            max-width: 360px;
+            width: 100%;
         }
     </style>
     <main id="formContainer">
@@ -42,7 +43,7 @@
                     <br>
                     <button type="submit" class="uk-button uk-button-primary">Login</button>
                     <hr>
-                    <a href="{{ route('get.registration') }}">Buat Akun</a>
+                    <a href="{{ route('get.registration') }}">Registration</a>
                 </form>
             </section>
         </section>
