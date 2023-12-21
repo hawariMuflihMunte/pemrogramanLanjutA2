@@ -22,14 +22,11 @@ class RegistrationController extends Controller
             'password' => ['required']
         ]);
 
-        $checkName = User::where('name', $registration['name'])->first();
-        $checkUsername = User::where('username', $registration['username'])->first();
-        $checkEmail = User::where('email', $registration['email'])->first();
-
         if (
-            $checkName != null ||
-            $checkUsername != null ||
-            $checkEmail != null
+            User::where('name', $registration['name'])
+                ->orWhere('username', $registration['username'])
+                ->orWhere('email', $registration['email'])
+                ->exists()
         ) {
             return back()->with('registration-error', 'Registrasi gagal!');
         }
