@@ -30,6 +30,9 @@
             @if(session()->has('login-error'))
                 <small style="color: red; margin-bottom: 12px;">{{ session('login-error') }}</small>
             @endif
+            @if(session()->has('registration-success'))
+                <small style="color: green; margin-bottom: 12px;">{{ session('registration-success') }}</small>
+            @endif
             <section>
                 <form action="{{ route('post.login') }}" method="POST" autocomplete="off">
                     @csrf
