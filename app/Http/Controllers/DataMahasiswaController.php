@@ -19,6 +19,7 @@ class DataMahasiswaController extends Controller
             'jurusan' => 'Teknik Informatika'
         ];
         $db = Matakuliah::all();
+
         return view('data_mahasiswa', [
             'data_mahasiswa' => $data,
             'matakuliah' => $db
@@ -42,6 +43,7 @@ class DataMahasiswaController extends Controller
             'kode' => $request->kode,
             'nama' => $request->nama,
             'sks' => (int)$request->sks,
+            'kelas' => $request->kelas,
             'dosen' => $request->dosen
         ]);
 
@@ -97,6 +99,7 @@ class DataMahasiswaController extends Controller
             'kode' => $request->kode,
             'nama' => $request->nama,
             'sks' => (int)$request->sks,
+            'kelas' => $request->kelas,
             'dosen' => $request->dosen
         ]);
 

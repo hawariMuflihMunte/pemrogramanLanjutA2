@@ -15,6 +15,7 @@ class Matakuliah extends Model
         'kode',
         'nama',
         'sks',
-        'dosen'
+        'dosen',
+        'kelas'
     ];
 }
