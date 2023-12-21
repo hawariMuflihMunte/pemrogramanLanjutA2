@@ -27,11 +27,11 @@
         <section>
             <h1>Registration</h1>
             <hr>
-            @if(session()->has('login-error'))
-                <small style="color: red; margin-bottom: 12px;">{{ session('login-error') }}</small>
+            @if(session()->has('registration-error'))
+                <small style="color: red; margin-bottom: 12px;">{{ session('registration-error') }}</small>
             @endif
             <section>
-                <form action="{{ route('post.login') }}" method="POST" autocomplete="off">
+                <form action="{{ route('post.registration') }}" method="POST" autocomplete="off">
                     @csrf
                     <label for="name">Name</label>
                     <input type="text" name="name" id="name" class="uk-input" value="{{ old('name') }}" autofocus required>
