@@ -29,11 +29,6 @@ class LoginController extends Controller
         return back()->with('login-error', 'Login failed!');
     }
 
-    public function registration(Request $request)
-    {
-        return "Registration Page";
-    }
-
     public function logout(Request $request)
     {
         Auth::logout();
