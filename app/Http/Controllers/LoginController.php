@@ -17,10 +17,6 @@ class LoginController extends Controller
 
     public function login(Request $request):  Redirector|RedirectResponse
     {
-        if (Auth::check()) {
-            return redirect()->route('data-mahasiswa.index');
-        }
-
         $credentials = $request->validate([
             'username' => ['required'],
             'password' => ['required'],
