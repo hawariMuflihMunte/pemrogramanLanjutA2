@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Matakuliah;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,7 +13,7 @@ class DataMahasiswaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View|RedirectResponse
     {
         if (Auth::check()) {
             $data = [
@@ -34,7 +36,7 @@ class DataMahasiswaController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View|RedirectResponse
     {
         if (Auth::check()) {
             return view('data_mahasiswa_create');
@@ -46,7 +48,7 @@ class DataMahasiswaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         if (Auth::check()) {
             $matakuliah = Matakuliah::create([
@@ -72,7 +74,7 @@ class DataMahasiswaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id): View|RedirectResponse
     {
         if (Auth::check()) {
             $matakuliah = Matakuliah::find((int)$id);
@@ -92,7 +94,7 @@ class DataMahasiswaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id): View|RedirectResponse
     {
         if (Auth::check()) {
             $matakuliah = Matakuliah::find((int)$id);
@@ -112,7 +114,7 @@ class DataMahasiswaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id): RedirectResponse
     {
         if (Auth::check()) {
             $matakuliah = Matakuliah::find((int)$id);
@@ -140,7 +142,7 @@ class DataMahasiswaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id): RedirectResponse
     {
         if (Auth::check()) {
             $rowsAffected = Matakuliah::destroy((int)$id);

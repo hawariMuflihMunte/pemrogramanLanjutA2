@@ -3,17 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class RegistrationController extends Controller
 {
-    public function index()
+    public function index(): View
     {
         return view('registration');
     }
 
-    public function registration(Request $request)
+    public function registration(Request $request): RedirectResponse
     {
         $registration = $request->validate([
             'name' => ['required', 'string', 'regex:/^[A-Za-z .]+$/'],
@@ -39,9 +41,13 @@ class RegistrationController extends Controller
         ]);
 
         if (!$user) {
-            return redirect()->back()->with('registration-error', 'Registrasi gagal. Terjadi kesalahan!');
+            return redirect()
+                ->back()
+                ->with('registration-error', 'Registrasi gagal. Terjadi kesalahan!');
         }
 
-        return redirect()->route('login')->with('register-success', 'Registrasi berhasil!');
+        return redirect()
+            ->route('login')
+            ->with('register-success', 'Registrasi berhasil!');
     }
 }
