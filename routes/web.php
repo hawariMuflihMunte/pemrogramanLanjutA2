@@ -21,5 +21,5 @@ Route::resource('/data-mahasiswa', DataMahasiswaController::class)->middleware('
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('post.login');
 
-Route::get('/register', [RegistrationController::class, 'index'])->name('get.registration');
-Route::post('/register', [RegistrationController::class, 'registration'])->name('post.registration');
+Route::get('/registration', [RegistrationController::class, 'index'])->name('get.registration');
+Route::post('/registration', [RegistrationController::class, 'registration'])->name('post.registration');
