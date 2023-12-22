@@ -65,7 +65,7 @@ class DataMahasiswaController extends Controller
                 session()->flash('message_create_failed', 'Data gagal ditambah. Terjadi kesalahan!');
             }
 
-            return redirect()->route('pages.data-mahasiswa.index');
+            return redirect()->route('data-mahasiswa.index');
         }
 
         return redirect()->route('login');
