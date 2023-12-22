@@ -24,7 +24,7 @@ class DataMahasiswaController extends Controller
             ];
             $db = Matakuliah::all();
 
-            return view('data_mahasiswa', [
+            return view('pages.data_mahasiswa', [
                 'data_mahasiswa' => $data,
                 'matakuliah' => $db
             ]);
@@ -39,7 +39,7 @@ class DataMahasiswaController extends Controller
     public function create(): View|RedirectResponse
     {
         if (Auth::check()) {
-            return view('data_mahasiswa_create');
+            return view('pages.data_mahasiswa_create');
         }
 
         return redirect()->route('login');
@@ -65,7 +65,7 @@ class DataMahasiswaController extends Controller
                 session()->flash('message_create_failed', 'Data gagal ditambah. Terjadi kesalahan!');
             }
 
-            return redirect()->route('data-mahasiswa.index');
+            return redirect()->route('pages.data-mahasiswa.index');
         }
 
         return redirect()->route('login');
@@ -85,7 +85,7 @@ class DataMahasiswaController extends Controller
                 session()->flash('message_show_failed', 'Data gagal ditemukan. Terjadi kesalahan!');
             }
 
-            return view('data_mahasiswa_show', ['matakuliah' => $matakuliah]);
+            return view('pages.data_mahasiswa_show', ['matakuliah' => $matakuliah]);
         }
 
         return redirect()->route('login');
@@ -105,7 +105,7 @@ class DataMahasiswaController extends Controller
                 session()->flash('message_edit_failed', 'Data gagal ditemukan. Terjadi kesalahan!');
             }
 
-            return view('data_mahasiswa_edit', ['matakuliah' => $matakuliah]);
+            return view('pages.data_mahasiswa_edit', ['matakuliah' => $matakuliah]);
         }
 
         return redirect()->route('login');
